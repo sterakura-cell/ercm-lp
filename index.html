@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>燃やさずに最大1/1300へ｜熱分解装置 ERCM／油化装置 OHD</title>
+<meta name="description" content="食品残渣・脱水汚泥・廃プラを、補助燃料ゼロで1/100〜1/1300に減容する内熱型熱分解装置ERCM。廃プラは重量比80%を油化するOHDも。導入企業では処理費が月400万円→10万円に。60秒の適合診断つき。">
+<meta property="og:title" content="燃やさずに最大1/1300へ｜熱分解装置 ERCM／油化装置 OHD">
+<meta property="og:description" content="補助燃料ゼロ・夜間無人運転。導入企業では処理費が月400万円→10万円に。食品残渣も高含水汚泥もそのまま投入できる内熱型熱分解装置。60秒の適合診断つき。">
+<meta property="og:type" content="website">
+<meta name="robots" content="index,follow">
+<!-- GA4: 測定IDが決まったら G-XXXXXXXXXX を差し替えて下のコメントを外す
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
+-->
+<style>
+:root{
+  --ink:#12151a; --ink-2:#3d4552; --ink-3:#6b7480;
+  --paper:#ffffff; --paper-2:#f5f6f8; --paper-3:#eceef1;
+  --line:#dfe3e8;
+  --ember:#c2451d; --ember-soft:#fdf1ec;
+  --teal:#0f6b63; --teal-soft:#eaf5f3;
+  --ok:#0f6b63; --warn:#9a6206; --ng:#a02a1d;
+  --radius:10px;
+  --font:"Helvetica Neue",-apple-system,BlinkMacSystemFont,"Segoe UI","Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic UI","Meiryo",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--paper);line-height:1.8;font-size:16px;letter-spacing:.01em}
+img{max-width:100%}
+a{color:var(--ember)}
+.wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+.narrow{max-width:800px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+h2{font-size:clamp(22px,3.4vw,31px);line-height:1.45;margin:0 0 8px;letter-spacing:-.01em}
+h3{font-size:18px;margin:0 0 8px;line-height:1.6}
+.lede{color:var(--ink-2);margin:0 0 36px;font-size:15px}
+.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--ember);font-weight:700;margin:0 0 10px}
+
+/* ---------- header ---------- */
+.bar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;align-items:center;justify-content:space-between;height:58px}
+.logo{font-weight:800;letter-spacing:.06em;font-size:17px}
+.logo span{color:var(--ember)}
+.bar a.btn{font-size:13px;padding:9px 16px}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(165deg,#171c24 0%,#0d1116 100%);color:#fff;padding:76px 0 68px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-140px;top:-120px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(194,69,29,.28),transparent 68%)}
+.hero .wrap{position:relative;z-index:1}
+.hero h1{font-size:clamp(29px,5.4vw,50px);line-height:1.3;margin:0 0 20px;letter-spacing:-.02em;font-weight:800}
+.hero h1 em{font-style:normal;color:#ff8f5e}
+.hero p.sub{font-size:clamp(15px,2vw,18px);color:#c3cad4;margin:0 0 30px;max-width:640px}
+.hero .tag{display:inline-block;font-size:12px;letter-spacing:.1em;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:5px 14px;margin-bottom:22px;color:#dbe2ea}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.hero-note{font-size:12.5px;color:#8e97a3;margin-top:16px}
+
+.btn{display:inline-block;background:var(--ember);color:#fff;text-decoration:none;font-weight:700;padding:15px 30px;border-radius:var(--radius);border:0;cursor:pointer;font-size:16px;font-family:inherit;transition:transform .12s,background .12s}
+.btn:hover{background:#a93a17;transform:translateY(-1px)}
+.btn.ghost{background:transparent;border:1px solid rgba(255,255,255,.4);color:#fff}
+.btn.ghost:hover{background:rgba(255,255,255,.1)}
+.btn.lite{background:var(--paper-3);color:var(--ink)}
+.btn.lite:hover{background:#dfe3e8}
+.btn[disabled]{opacity:.45;cursor:not-allowed;transform:none}
+
+/* ---------- numbers ---------- */
+.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.14);border-radius:var(--radius);overflow:hidden;margin-top:44px}
+.hero-stats div{background:#131820;padding:20px 18px}
+.hero-stats b{display:block;font-size:clamp(24px,4vw,34px);font-weight:800;color:#fff;line-height:1.2;letter-spacing:-.02em}
+.hero-stats small{display:block;color:#98a2ae;font-size:12px;margin-top:6px;line-height:1.6}
+
+/* ---------- generic blocks ---------- */
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g4{grid-template-columns:repeat(4,1fr)}
+.card{border:1px solid var(--line);border-radius:var(--radius);padding:22px;background:#fff}
+.card p{margin:0;font-size:14.5px;color:var(--ink-2)}
+.card .k{font-size:12px;font-weight:700;color:var(--ember);letter-spacing:.08em;margin-bottom:8px}
+.tinted{background:var(--paper-2)}
+
+.pain{border-left:3px solid var(--ember);padding:4px 0 4px 18px;margin-bottom:20px}
+.pain b{display:block;font-size:16px}
+.pain span{font-size:14px;color:var(--ink-2)}
+
+/* ---------- table ---------- */
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px;background:#fff}
+th,td{padding:13px 15px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--paper-2);font-size:12.5px;letter-spacing:.04em;color:var(--ink-2);white-space:nowrap}
+tbody th{font-weight:700;width:150px;background:#fafbfc}
+td.ercm{background:var(--ember-soft)}
+tr:last-child th,tr:last-child td{border-bottom:0}
+.unit{color:var(--ink-3);font-size:12px}
+
+/* ---------- inputs grid ---------- */
+.mat{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.mat div{border:1px solid var(--line);border-radius:var(--radius);padding:16px;background:#fff}
+.mat b{display:block;font-size:15px;margin-bottom:4px}
+.mat span{font-size:13px;color:var(--ink-2);line-height:1.7}
+.mat .flag{display:inline-block;font-size:11px;background:var(--teal-soft);color:var(--teal);border-radius:4px;padding:2px 7px;margin-top:8px;font-weight:700}
+.mat .wide{grid-column:span 2}
+@media(max-width:620px){.mat .wide{grid-column:auto}}
+
+/* ---------- diagnostic ---------- */
+#shindan{background:linear-gradient(180deg,#171c24,#11161d);color:#fff}
+#shindan h2{color:#fff}
+#shindan .lede{color:#aab3bf}
+.dbox{background:#fff;color:var(--ink);border-radius:14px;padding:clamp(22px,4vw,40px);box-shadow:0 24px 60px rgba(0,0,0,.34)}
+.step{display:none}
+.step.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.progress{display:flex;gap:6px;margin-bottom:26px}
+.progress i{flex:1;height:3px;background:var(--paper-3);border-radius:2px}
+.progress i.on{background:var(--ember)}
+.q{font-size:clamp(18px,2.6vw,23px);font-weight:800;margin:0 0 6px;line-height:1.5}
+.qsub{font-size:13.5px;color:var(--ink-3);margin:0 0 22px}
+.opts{display:grid;gap:10px;grid-template-columns:repeat(2,1fr)}
+.opt{display:flex;gap:11px;align-items:flex-start;border:1.5px solid var(--line);border-radius:var(--radius);padding:14px 16px;cursor:pointer;background:#fff;transition:border-color .12s,background .12s;font-size:14.5px;line-height:1.6}
+.opt:hover{border-color:#b9c0c9}
+.opt input{margin:4px 0 0;accent-color:var(--ember);flex:none;width:17px;height:17px}
+.opt.sel{border-color:var(--ember);background:var(--ember-soft)}
+.opt small{display:block;color:var(--ink-3);font-size:12.5px;margin-top:2px}
+.navrow{display:flex;justify-content:space-between;align-items:center;margin-top:26px;gap:12px}
+.back{background:none;border:0;color:var(--ink-3);cursor:pointer;font-size:14px;font-family:inherit;padding:8px}
+.back:hover{color:var(--ink)}
+
+/* result */
+.verdict{display:flex;align-items:center;gap:14px;padding:20px 22px;border-radius:var(--radius);margin-bottom:24px}
+.verdict.ok{background:var(--teal-soft);border:1px solid #b9dcd7}
+.verdict.warn{background:#fdf5e6;border:1px solid #ecd9ab}
+.verdict.ng{background:#fdeeec;border:1px solid #f0c4bd}
+.verdict .mark{font-size:30px;font-weight:800;line-height:1;flex:none}
+.verdict.ok .mark{color:var(--ok)} .verdict.warn .mark{color:var(--warn)} .verdict.ng .mark{color:var(--ng)}
+.verdict b{display:block;font-size:19px;line-height:1.5}
+.verdict span{font-size:14px;color:var(--ink-2)}
+.rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;margin-bottom:24px}
+.rgrid div{background:#fff;padding:18px 16px}
+.rgrid small{display:block;font-size:11.5px;color:var(--ink-3);letter-spacing:.06em;margin-bottom:6px}
+.rgrid b{font-size:21px;font-weight:800;line-height:1.3;letter-spacing:-.01em}
+.rgrid em{font-style:normal;font-size:13px;color:var(--ink-2);display:block;margin-top:4px}
+.notes{border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;margin-bottom:24px;background:var(--paper-2)}
+.notes h4{margin:0 0 10px;font-size:14px;letter-spacing:.04em}
+.notes ul{margin:0;padding-left:20px;font-size:14px;color:var(--ink-2)}
+.notes li{margin-bottom:7px}
+.notes li:last-child{margin-bottom:0}
+
+/* form */
+.form{border-top:1px solid var(--line);padding-top:26px}
+.fgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:14px}
+label.f{display:block;font-size:13px;font-weight:700;margin-bottom:6px}
+label.f i{font-style:normal;color:var(--ember);font-size:11px;margin-left:5px}
+input[type=text],input[type=email],input[type=tel],textarea{width:100%;border:1.5px solid var(--line);border-radius:8px;padding:11px 13px;font-size:15px;font-family:inherit;background:#fff;color:var(--ink)}
+input:focus,textarea:focus{outline:0;border-color:var(--ember)}
+textarea{min-height:92px;resize:vertical}
+.consent{font-size:12.5px;color:var(--ink-3);margin:14px 0 18px}
+.consent input{accent-color:var(--ember);margin-right:6px}
+
+/* ---------- proof ---------- */
+.case{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.case .head{padding:16px 18px;border-bottom:1px solid var(--line);background:var(--paper-2)}
+.case .head b{display:block;font-size:15.5px}
+.case .head span{font-size:12.5px;color:var(--ink-3)}
+.case .body{padding:16px 18px;font-size:14px;color:var(--ink-2)}
+.case .body b{color:var(--ink)}
+.badge{display:inline-block;font-size:11.5px;font-weight:700;padding:3px 9px;border-radius:4px;background:var(--paper-3);color:var(--ink-2);margin-right:6px}
+.badge.jp{background:var(--ember-soft);color:var(--ember)}
+.badge.ov{background:var(--teal-soft);color:var(--teal)}
+
+details.legal{border:1px solid var(--line);border-radius:var(--radius);background:#fff;margin-bottom:12px}
+details.legal>summary{cursor:pointer;padding:16px 20px;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;gap:12px;align-items:center}
+details.legal>summary::-webkit-details-marker{display:none}
+details.legal>summary::after{content:"＋";color:var(--ember);font-weight:800;flex:none}
+details.legal[open]>summary::after{content:"−"}
+details.legal .in{padding:0 20px 20px;font-size:14.5px;color:var(--ink-2)}
+details.legal .in p{margin:0 0 12px}
+details.legal .in p:last-child{margin-bottom:0}
+
+.fine{font-size:12px;color:var(--ink-3);line-height:1.85}
+.fine ol{padding-left:18px;margin:8px 0 0}
+footer{background:#11161d;color:#8e97a3;padding:44px 0 40px;font-size:13px}
+footer b{color:#fff;font-size:15px;display:block;margin-bottom:8px}
+footer a{color:#c3cad4}
+
+.sticky{position:fixed;left:0;right:0;bottom:0;background:rgba(19,24,32,.97);padding:11px 16px;display:none;z-index:60;box-shadow:0 -4px 20px rgba(0,0,0,.25)}
+.sticky .in{max-width:1060px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.sticky p{margin:0;color:#c3cad4;font-size:13px;line-height:1.5}
+.sticky .btn{padding:12px 22px;font-size:14px;flex:none}
+
+@media(max-width:860px){
+  .g3,.g4,.mat{grid-template-columns:repeat(2,1fr)}
+  .rgrid{grid-template-columns:1fr}
+}
+@media(max-width:620px){
+  section{padding:52px 0}
+  .g2,.g3,.g4,.mat,.opts,.fgrid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:1fr}
+  .bar a.btn{display:none}
+  .sticky .in p{display:none}
+  .sticky .btn{width:100%}
+}
+</style>
+</head>
+<body>
+
+<div class="bar">
+  <div class="wrap">
+    <div class="logo">ERCM<span>.</span></div>
+    <a href="#shindan" class="btn">60秒で適合診断</a>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="wrap">
+    <span class="tag">有機物減容セラミック製造装置 ERCM ／ 内熱型 熱分解装置</span>
+    <h1>その生ごみ・汚泥・廃プラ、<br><em>燃やさずに1/100以下</em>にできます。</h1>
+    <p class="sub">補助燃料ゼロ。予備乾燥ゼロ。含水率60〜70%の脱水汚泥ケーキも、そのまま投入できる熱分解装置です。焼却炉ではありません。導入した食品工場では、廃棄物処理コストが月400万円から月10万円になりました。</p>
+    <div class="hero-cta">
+      <a href="#shindan" class="btn">御社の廃棄物が処理できるか診断する</a>
+      <a href="#proof" class="btn ghost">実測データを見る</a>
+    </div>
+    <p class="hero-note">全4問・約60秒。判定結果はその場で表示されます。</p>
+
+    <div class="hero-stats">
+      <div><b>▲390万円/月</b><small>名古屋市の食品工場（ERCM10型）の処理コスト削減実績。月400万円 → 月10万円</small></div>
+      <div><b>1/1300</b><small>同工場での実測減容率（含水率20%）。実証試験でも1/128の実測あり</small></div>
+      <div><b>補助燃料 0</b><small>運転中の燃料・薬剤は不要。20㎥/日処理で電気代10〜15万円/月程度</small></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PAIN ============ -->
+<section>
+  <div class="narrow">
+    <p class="eyebrow">こんな状況なら、検討する価値があります</p>
+    <h2>廃棄物を「量」で払い続けている工場ほど、効きます。</h2>
+    <p class="lede">ERCMは、外部委託している廃棄物の"かさ"そのものを工場内で消します。</p>
+
+    <div class="pain"><b>地域に処理業者が少なく、委託費が言い値になっている</b><span>地方では選べる業者が限られ、高額な処理費を受け入れざるを得ない会社が少なくありません。自社で減容できれば、この構造から抜けられます。</span></div>
+    <div class="pain"><b>産廃処理費が毎年上がり、下げる手がない</b><span>委託単価は交渉の余地が小さい。減るのは「量」を減らしたときだけです。</span></div>
+    <div class="pain"><b>含水率が高くて、他の減量手段が使えない</b><span>脱水ケーキ、食品残渣、内臓・貝殻。乾燥機を回せば燃料費が乗ります。</span></div>
+    <div class="pain"><b>分別の手間が人件費として乗っている</b><span>ERCMは有機物が混ざったまま投入できます。金属・ガラスは残渣から回収。</span></div>
+    <div class="pain"><b>脱炭素・廃棄物削減の数値を報告する必要がある</b><span>補助燃料不要・省電力のため、焼却処理と比べCO₂排出は大幅に少なくなります。</span></div>
+    <div class="pain" style="margin-bottom:0"><b>自社焼却炉の更新時期が近い</b><span>耐火材不要・冷却水不要・稼働機器が少ないシンプル構造。夜間無人運転も可能です。</span></div>
+  </div>
+</section>
+
+<!-- ============ WHAT ============ -->
+<section class="tinted" style="background:var(--paper-2)">
+  <div class="wrap">
+    <p class="eyebrow">ERCMとは</p>
+    <h2>燃やすのではなく、熱で分解して「セラミック粉末」に変える装置です。</h2>
+    <p class="lede">Earth – Resource – Ceramic – Machine。国内特許 第4580388号／米国特許 USP No. 7,648,615 B2 取得済。</p>
+
+    <div class="grid g3">
+      <div class="card">
+        <div class="k">01 投入</div>
+        <h3>分別せず、そのまま入れる</h3>
+        <p>食品残渣も廃プラも混ざったまま投入可能。含水率が高いものも予備乾燥は不要です。液体・粉体のみ袋詰めが必要。</p>
+      </div>
+      <div class="card">
+        <div class="k">02 熱分解</div>
+        <h3>火炎を出さずに分解する</h3>
+        <p>空気比1.0未満（メーカー資料では0.2〜0.3程度）の低酸素状態で、有機物の分子構造を切断。反応熱が次の熱源になるため、補助燃料は要りません。</p>
+      </div>
+      <div class="card">
+        <div class="k">03 回収</div>
+        <h3>約24時間で、セラミック灰に</h3>
+        <p>投入した生ごみ等は、翌日には無機質のセラミック粉末（物質収支5%以下）に。粉末はメーカーが全量買取するため、最終処分がゼロになります。</p>
+      </div>
+    </div>
+
+    <div class="grid g4" style="margin-top:16px">
+      <div class="card"><div class="k">炉内温度</div><p><b style="font-size:20px">約100℃前後</b><br>ERCM熱源領域を除く。稼働中も外壁を手で触れます。</p></div>
+      <div class="card"><div class="k">炉内気圧</div><p><b style="font-size:20px">ほぼ大気圧</b><br>意図的な加圧・減圧機構はありません。</p></div>
+      <div class="card"><div class="k">運転人員</div><p><b style="font-size:20px">ほぼ投入のみ</b><br>夜間無人運転が可能。メンテ習得は2週間〜1か月。</p></div>
+      <div class="card"><div class="k">油溶性成分</div><p><b style="font-size:20px">8,500〜9,000<span class="unit"> cal/g</span></b><br>重油〜ガソリン相当の熱量。燃焼油として再利用可。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATERIALS ============ -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">投入可能物</p>
+    <h2>「うちのゴミは入るのか」から確認してください。</h2>
+    <p class="lede">対象は C（炭素）・H（水素）・O（酸素）で構成される有機物。動植物系バイオマスと、化石燃料由来のプラスチックです。スーパーマーケットでの導入例では、店舗から出る生ごみ等を投入し、約24時間後にはセラミック灰になっています。</p>
+
+    <div class="mat">
+      <div><b>食品残渣・生ごみ</b><span>野菜くず、食品加工残渣、内臓、貝殻。</span><span class="flag">高含水OK</span></div>
+      <div><b>下水汚泥・脱水ケーキ</b><span>し尿・汚泥、排水処理汚泥、焼却灰も可。</span><span class="flag">高含水・臭気OK</span></div>
+      <div><b>廃プラスチック</b><span>PP、PE、ビニル、発泡スチロール、容器包装。</span><span class="flag">油分回収</span></div>
+      <div><b>木くず・剪定枝</b><span>解体木くず等。木酢液が回収できます。</span><span class="flag">木酢液</span></div>
+      <div><b>糞尿・畜産廃棄物</b><span>鶏糞・牛糞・豚糞。駆除害獣・動物の死骸も（骨はCa等の無機分のみ残留）。</span><span class="flag">滅菌・脱臭</span></div>
+      <div><b>感染性医療廃棄物</b><span>注射針・おむつ等も分別なしに直接投入可能。</span><span class="flag">滅菌・殺菌効果</span></div>
+      <div><b>ASR・廃タイヤ</b><span>シュレッダーダスト、被覆電線（金属部分のみ残る）。</span><span class="flag">難処理物</span></div>
+      <div><b>FRP・太陽光パネル・電子機器</b><span>樹脂分のみ分解し、グラスファイバーや金属・基板は残渣から回収。希少金属のリサイクルが容易。</span><span class="flag">焼却困難物</span></div>
+      <div><b>難分解性物質を含むもの</b><span>PCB含有塗膜屑、フッ素化合物（PTFE・PFOA・PFOS）、DDT等。PCBは検出限界未満まで分解した実績。</span><span class="flag">分解試験実績</span></div>
+      <div><b>海洋漂着ごみ</b><span>塩分による炉内腐食で焼却困難とされるものも処理対象。</span><span class="flag">焼却困難物</span></div>
+      <div class="wide" style="border-style:dashed;background:var(--paper-2)"><b style="color:var(--ng)">対象外：不燃物</b><span>金属・ガラス・がれき等。ペットボトル大までは残渣から回収できますが、目立つ不燃物は投入前に除去してください。液体・粉体は袋詰めが必要です。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COMPARISON ============ -->
+<section class="tinted" style="background:var(--paper-2)">
+  <div class="wrap">
+    <p class="eyebrow">比較</p>
+    <h2>焼却施設との違いは、運用コストに出ます。</h2>
+    <p class="lede">出典：メーカー技術資料（2025年7月版）。焼却施設側の一般的特徴は 寺嶋均（2008)「廃棄物処理プラントの維持管理技術と現状と課題」環境技術会誌 No.131 による。</p>
+
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th></th><th>従来の焼却施設等</th><th>ERCM（熱分解施設）</th></tr></thead>
+        <tbody>
+          <tr><th>減容率</th><td>1/10〜1/20 程度</td><td class="ercm"><b>1/100〜1/1300 程度</b>（実測：実証炉1/128、名古屋10型1/1300）</td></tr>
+          <tr><th>補助燃料</th><td>燃料・薬剤・用水を多量に消費</td><td class="ercm"><b>運転時の燃料・薬剤は不要</b>。消費電力も極めて少ない</td></tr>
+          <tr><th>高含水物</th><td>そのままでは焼却できず予備乾燥が必要</td><td class="ercm"><b>含水率60〜70%の脱水ケーキも直接投入可</b></td></tr>
+          <tr><th>分別</th><td>形状・性状の不均一がトラブル要因</td><td class="ercm">不均一・混在物もそのまま投入可能な設計</td></tr>
+          <tr><th>構造</th><td>多数の稼働機器からなる複雑・大規模プラント</td><td class="ercm">耐火材不要のシンプル構造。稼働機器は電子発生装置・ブロア・ダンパー・ポンプ・電気触媒</td></tr>
+          <tr><th>運転員</th><td>熟練運転員の育成に数年</td><td class="ercm">技術者でなくても対応可。メンテ習得に2週間〜1か月</td></tr>
+          <tr><th>メンテナンス</th><td>毎年定期的な補修工事が必要</td><td class="ercm">定期実施するが簡易的。大がかりな補修工事にならない</td></tr>
+          <tr><th>CO₂排出量</th><td>21%</td><td class="ercm"><b>1.7%</b>（有機物を揮発性低分子量有機物に分解制御するため）</td></tr>
+          <tr><th>残渣の行き先</th><td>焼却灰の最終処分が必要</td><td class="ercm"><b>セラミック粉末は100%リサイクル可能</b>（メーカーが全量買取）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OHD ============ -->
+<section id="ohd">
+  <div class="wrap">
+    <p class="eyebrow">廃プラが多いなら</p>
+    <h2>廃プラの80%を「原油」に変える新型機 OHD もあります。</h2>
+    <p class="lede">OHD（Hydro – Oxygen – Destroyer）は、ERCMの熱分解に油化回収を組み合わせた有機物減容再生装置です。</p>
+
+    <div class="grid g4">
+      <div class="card"><div class="k">油化率</div><p><b style="font-size:20px">重量比 80%</b><br>廃プラスチック・ビニール等の石油由来製品を油化。回収した原油は汎用利用できます。</p></div>
+      <div class="card"><div class="k">設置面積</div><p><b style="font-size:20px">ERCMの 1/3 以下</b><br>電子発生ユニットを1.5倍に増強し、装置を大幅にコンパクト化。</p></div>
+      <div class="card"><div class="k">可搬性</div><p><b style="font-size:20px">トラックで移動可</b><br>設備ごと移動できるため、現場・災害地域での処理にも対応します。</p></div>
+      <div class="card"><div class="k">排ガス処理</div><p><b style="font-size:20px">燃焼せず無害化</b><br>触媒排気処理装置を採用。排ガスを水中に直接吹き込み、急速冷却で油化成分を液化分離（水は循環利用）。</p></div>
+    </div>
+
+    <p class="lede" style="margin:36px 0 16px"><b style="color:var(--ink)">機種ラインナップ（ERCM／OHD 共通型式）</b>　記載のない型式（0.5型・2型等）も、100型を最大規模として製造対応が可能です。</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>型式</th><th>1型</th><th>5型</th><th>10型</th><th>20型</th><th>50型</th><th>100型</th></tr></thead>
+        <tbody>
+          <tr><th>処理能力 <span class="unit">㎥/日</span></th><td>1.0</td><td>5.0</td><td>10.0</td><td>20.0</td><td>50.0</td><td>100.0</td></tr>
+          <tr><th>処理能力 <span class="unit">トン/日</span></th><td>0.2〜0.3</td><td>1.0〜1.5</td><td>2.0〜3.0</td><td>4.0〜6.0</td><td>10〜15</td><td>20〜30</td></tr>
+          <tr><th>寸法 <span class="unit">幅×長×高 m</span></th><td>2.3×7.6×3.1</td><td>4.5×17.8×4.4</td><td>6.0×22.5×4.5</td><td>8.0×27.0×6.6</td><td>10.0×23.0×6.0</td><td>17.0×40.0×6.0</td></tr>
+          <tr><th>設置面積 <span class="unit">㎡（ERCM/OHD）</span></th><td>45.9／30.6</td><td>135.2／90.1</td><td>204.0／136.0</td><td>300.0／200.0</td><td>312.0</td><td>817.0</td></tr>
+          <tr><th>重量 <span class="unit">kg</span></th><td>15,700</td><td>23,900</td><td>25,200</td><td>41,100</td><td>76,813</td><td>229,020</td></tr>
+          <tr><th>消費電力 <span class="unit">kWh/日 ※</span></th><td>20.0</td><td>30.0</td><td>35.0</td><td>40.0</td><td>45.0</td><td>60.0</td></tr>
+          <tr><th>電源</th><td colspan="6">200V（三相）／装置構成：熱分解施設（本体）＋排気処理装置（滞留槽・ウェットスクラバー・凝縮水タンク・還元槽）＋制御盤</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine" style="margin-top:10px">※ 消費電力はバッチ処理の投入口・ポンプ・制御器のみ。イオン発生ユニットは0.4W/個で、200個設置の場合でも約2.0kWh/日程度。20㎥/日処理の場合の電気代は10〜15万円/月程度です。</p>
+  </div>
+</section>
+
+<!-- ============ PROOF ============ -->
+<section id="proof" class="tinted" style="background:var(--paper-2)">
+  <div class="wrap">
+    <p class="eyebrow">実測データと導入実績</p>
+    <h2>カタログ値ではなく、第三者が測った数字です。</h2>
+    <p class="lede">排ガスは計量証明事業者による測定値、減容率は3か月の連続実証による実測値です。</p>
+
+    <div class="tablewrap" style="margin-bottom:26px">
+      <table>
+        <thead><tr><th>排ガス測定項目</th><th>単位</th><th>測定値</th><th>基準値</th><th>基準比</th></tr></thead>
+        <tbody>
+          <tr><th>窒素酸化物</th><td class="unit">ppm</td><td class="ercm"><b>45〜63</b></td><td>250</td><td class="unit">約 1/4〜1/5</td></tr>
+          <tr><th>塩化水素</th><td class="unit">mg/N㎥</td><td class="ercm"><b>32</b></td><td>700</td><td class="unit">約 1/22</td></tr>
+          <tr><th>煤塵（ダスト）</th><td class="unit">mg/N㎥</td><td class="ercm"><b>4.4</b></td><td>150</td><td class="unit">約 1/34</td></tr>
+          <tr><th>ダイオキシン類</th><td class="unit">ng-TEQ/㎥</td><td class="ercm"><b>2.6</b></td><td>5</td><td class="unit">約 1/2</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="fine" style="margin:-16px 0 34px">鹿嶋市衛生センター（茨城県鹿嶋市）設置 15㎥/日 商用プラント。平成24年5月測定／計量証明：株式会社日本シーシーエル／酸素濃度12%換算値。投入物は鹿嶋市の一般ごみ（圧縮しにくい布団・衣類・ソフト塩ビ等、生ごみは無し）。</p>
+
+    <div class="grid g3">
+      <div class="case">
+        <div class="head"><b>名古屋市の弁当製造企業（ERCM10型）</b><span>愛知県名古屋市／10㎥（約2トン）･日</span></div>
+        <div class="body"><span class="badge jp">国内・民間</span><br style="line-height:2.4">野菜かす・廃棄弁当を投入。処理コストは<b>月400万円 → 月10万円（▲390万円/月）</b>。<b>6年半故障なしで継続稼働</b>中。減容実績は<b>1/1300</b>（含水率20%）。玉三屋食品株式会社様（20㎥/日）も名古屋で稼働しています。</div>
+      </div>
+      <div class="case">
+        <div class="head"><b>大規模ショッピングセンター</b><span>神奈川県相模原市／0.5㎥･日 実証炉</span></div>
+        <div class="body"><span class="badge jp">実証試験</span><br style="line-height:2.4">2020年11月〜2021年1月の約3か月。食品加工残渣・廃プラ・木屑 <b>2,564kg</b> を投入し、生成セラミックは <b>19.8kg</b>（<b>1/128</b>）。</div>
+      </div>
+      <div class="case">
+        <div class="head"><b>鹿嶋市衛生センター 様</b><span>茨城県鹿嶋市／15㎥･日</span></div>
+        <div class="body"><span class="badge jp">自治体</span><br style="line-height:2.4">一般ごみを処理する商用プラント。上記の排ガス実測データの取得元です。</div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:16px">
+      <div class="case">
+        <div class="head"><b>ブラジル solvi 様</b><span>100㎥･日 大規模プラント</span></div>
+        <div class="body"><span class="badge ov">海外</span><br style="line-height:2.4">大規模処理の実績。国内の中小規模だけでなく、100㎥/日級のスケールでも稼働しています。</div>
+      </div>
+      <div class="case">
+        <div class="head"><b>中国 大連</b><span>100㎥･日 ＋ 可動式トレーラー</span></div>
+        <div class="body"><span class="badge ov">海外</span><br style="line-height:2.4">太陽光パネルで電力を賄う可動式トレーラー型も設置。災害地域での現地処理を想定した構成です。</div>
+      </div>
+      <div class="case">
+        <div class="head"><b>JICA モルディブプロジェクト</b><span>離島部の廃棄物処理</span></div>
+        <div class="body"><span class="badge ov">ODA</span><br style="line-height:2.4">公的スキームでの採用実績。</div>
+      </div>
+    </div>
+
+    <p class="lede" style="margin:36px 0 16px"><b style="color:var(--ink)">「焼却困難物」の分解試験実績</b>　焼却炉が苦手とするものほど、差が出ます。</p>
+    <div class="grid g3">
+      <div class="case">
+        <div class="head"><b>PCB（ポリ塩化ビフェニル）</b><span>橋梁の剥離塗装屑</span></div>
+        <div class="body"><span class="badge jp">分解試験</span><br style="line-height:2.4">処理前 <b>15mg/kg</b> のPCBが、処理後は<b>検出限界（0.0005mg/kg）未満</b>に。炉外への排出も検出されず。PCB含有旧塗膜を低コスト処理する保全工法として<b>特開2018-159172</b>。</div>
+      </div>
+      <div class="case">
+        <div class="head"><b>FRP（繊維強化プラスチック）</b><span>グラスファイバーの融解付着で焼却困難</span></div>
+        <div class="body"><span class="badge jp">分解試験</span><br style="line-height:2.4">ポリエステル樹脂・エポキシ樹脂等の樹脂分のみ分解され、基材の<b>グラスファイバーだけが残留</b>。リサイクル可能な状態で回収できます。</div>
+      </div>
+      <div class="case">
+        <div class="head"><b>駆除害獣・電子部品</b><span>鹿の死骸／基板類</span></div>
+        <div class="body"><span class="badge jp">分解試験</span><br style="line-height:2.4">鹿の死骸はセラミックのみに減容（骨のコラーゲン等も分解され、Ca等の無機分のみ残留）。電子部品は樹脂分が分解され、金属・希少金属の回収が容易になります。</div>
+      </div>
+    </div>
+
+    <div class="grid g3" style="margin-top:16px">
+      <div class="card tinted">
+        <div class="k">受賞</div>
+        <h3>第10回 ジャパン・レジリエンス・アワード（強靱化大賞）最優秀賞</h3>
+        <p>2024年4月23日、国土強靱化推進本部（本部長：内閣総理大臣）より表彰状を授与。循環経済新聞（2024年3月11日）、月刊「廃棄物」（2024年3月号）にも掲載されました。</p>
+      </div>
+      <div class="card tinted">
+        <div class="k">第三者評価</div>
+        <h3>環境省 平成24年度 除染技術実証事業 選定技術</h3>
+        <p>福島県広野町での実証で、がれきは容量が268分の1に減少。2013年11月27日のNHK「ニュースおはよう日本」でも、放射性物質を含む焼却灰が出ない処理設備として紹介されました。</p>
+      </div>
+      <div class="card tinted">
+        <div class="k">学術的裏付け</div>
+        <h3>東京工業大学との共同研究</h3>
+        <p>環境・社会工学院 高橋史武准教授らと反応メカニズムの解明を推進。実験とシミュレーションによる理論的説明を進めており、国際誌「Applied Energy」に2報が掲載されています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DIAGNOSTIC ============ -->
+<section id="shindan">
+  <div class="narrow">
+    <p class="eyebrow" style="color:#ff8f5e">ERCM 適合診断</p>
+    <h2>4問で、御社の廃棄物が処理できるか判定します。</h2>
+    <p class="lede">所要約60秒。判定結果・推奨機種サイズ・注意点がその場で表示されます。</p>
+
+    <div class="dbox">
+      <div class="progress" id="prog"><i class="on"></i><i></i><i></i><i></i></div>
+
+      <!-- Q1 -->
+      <div class="step on" data-step="0">
+        <p class="q">処理したい廃棄物を選んでください</p>
+        <p class="qsub">複数選択できます。混在したまま投入する前提で構いません。</p>
+        <div class="opts" id="q1"></div>
+        <div class="navrow"><span></span><button class="btn" id="n1" disabled>次へ</button></div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="step" data-step="1">
+        <p class="q">1日あたりの発生量はどのくらいですか</p>
+        <p class="qsub">おおよそで構いません。体積（㎥）でわからない場合は、感覚に近いものを選んでください。</p>
+        <div class="opts" id="q2"></div>
+        <div class="navrow"><button class="back" data-back="0">← 戻る</button><button class="btn" id="n2" disabled>次へ</button></div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="step" data-step="2">
+        <p class="q">水分の多さはどのくらいですか</p>
+        <p class="qsub">ERCMは高含水物が得意です。乾いている必要はありません。</p>
+        <div class="opts" id="q3"></div>
+        <div class="navrow"><button class="back" data-back="1">← 戻る</button><button class="btn" id="n3" disabled>次へ</button></div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="step" data-step="3">
+        <p class="q">現在はどのように処理していますか</p>
+        <p class="qsub">現状の方法によって、比較すべきコスト項目が変わります。</p>
+        <div class="opts" id="q4"></div>
+        <div class="navrow"><button class="back" data-back="2">← 戻る</button><button class="btn" id="n4" disabled>診断結果を見る</button></div>
+      </div>
+
+      <!-- RESULT -->
+      <div class="step" data-step="4">
+        <div id="verdict"></div>
+        <div class="rgrid" id="rgrid"></div>
+        <div class="notes" id="notes"></div>
+
+        <div class="form">
+          <h3 style="margin-bottom:4px">この診断結果をもとに、個別の試算をお送りします</h3>
+          <p class="qsub" style="margin-bottom:20px">処理量・投入物に応じた機種構成、設置スペース、概算費用、現状の委託費との比較をご案内します。しつこい営業はいたしません。</p>
+          <form id="lead">
+            <div class="fgrid">
+              <div><label class="f" for="f_co">会社名<i>必須</i></label><input type="text" id="f_co" name="company" required autocomplete="organization"></div>
+              <div><label class="f" for="f_na">ご担当者名<i>必須</i></label><input type="text" id="f_na" name="name" required autocomplete="name"></div>
+              <div><label class="f" for="f_em">メールアドレス<i>必須</i></label><input type="email" id="f_em" name="email" required autocomplete="email"></div>
+              <div><label class="f" for="f_tel">電話番号</label><input type="tel" id="f_tel" name="tel" autocomplete="tel"></div>
+            </div>
+            <label class="f" for="f_msg">ご質問・補足（任意）</label>
+            <textarea id="f_msg" name="message" placeholder="例：設置スペースが限られている／夜間のみ稼働させたい／既存の焼却炉の更新を検討中 など"></textarea>
+            <p class="consent"><label><input type="checkbox" id="f_ok" required>個人情報の取り扱いに同意します。ご入力内容はご連絡と個別試算の作成のみに使用します。</label></p>
+            <div class="navrow" style="margin-top:0">
+              <button type="button" class="back" data-back="0">最初からやり直す</button>
+              <button type="submit" class="btn">個別試算を依頼する</button>
+            </div>
+          </form>
+          <div id="sent" style="display:none"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LEGAL / FAQ ============ -->
+<section>
+  <div class="narrow">
+    <p class="eyebrow">よくある確認事項</p>
+    <h2>導入前に必ず論点になる5つ。</h2>
+    <p class="lede">設置の可否は所管自治体との協議事項です。事前に押さえておくべき点をそのまま載せます。</p>
+
+    <details class="legal">
+      <summary>これは「焼却炉」ではないのですか？</summary>
+      <div class="in">
+        <p>メーカーはERCMを「内熱型の熱分解施設」と位置づけています。焼却施設は完全燃焼のため空気比1.3〜1.6程度の空気を常時供給しますが、熱分解施設は空気比1.0未満の還元状態で有機物を分解し、炭化物・可燃性の液体やガスを回収します。ERCMは空気比0.2〜0.3程度で稼働し、火炎燃焼は生じないとされています。</p>
+        <p>メーカー資料では、廃棄物処理法施行規則 第一条の七の二（熱分解設備の構造）および平成17年 環境省告示第1号（環境大臣が定める熱分解の方法）の各要件について、すべて適合と説明されています。</p>
+        <p><b>ただし、施設としての取り扱い・必要な許認可の最終判断は、設置場所の所管自治体との協議によります。</b>検討初期の段階から自治体協議を並行して進めることをお勧めしており、その進め方も含めてご支援します。</p>
+      </div>
+    </details>
+
+    <details class="legal">
+      <summary>ダイオキシン類やばいじんは出ないのですか？</summary>
+      <div class="in">
+        <p>メーカー説明では、火炎燃焼が生じないためばいじん（飛ばい）が発生せず、ダイオキシン類の生成源も抑制されるとされています。加えて熱分解室内の上下で温度が急激に変化するため、ダイオキシン類が生成しにくい環境になるとされています。NOx・SOxについても、貧酸素の還元雰囲気と急激な温度変化により生成反応が抑制されやすいと説明されています。</p>
+        <p>実測値としては、鹿嶋市衛生センターでの測定で、ダイオキシン類 2.6 ng-TEQ/㎥（基準5）、煤塵 4.4 mg/N㎥（基準150）が確認されています。排気中のHClは水洗浄で、排水中のHClは中和沈殿で除去します。</p>
+      </div>
+    </details>
+
+    <details class="legal">
+      <summary>残ったセラミック粉末や、回収した油はどうなりますか？</summary>
+      <div class="in">
+        <p>セラミック粉末（物質収支で5%以下）は、株式会社ASK商会が全量買取します。当面は新設ERCMの敷き粉として再利用され、将来的にはコンクリートへの混合材、水質浄化材等への再利用が計画されています。</p>
+        <p>油溶性成分（物質収支40〜70%）は、分析上は有害成分を含まず、燃焼熱量8,500〜9,000cal/g（重油〜ガソリン相当）が確認されています。燃焼油としてのサーマルリサイクルのほか、分溜精製によるケミカルリサイクルの可能性もあります。水溶性成分（20〜40%）は、木質主体の投入物からは木酢液が得られます。処理水は次亜塩素酸水で酸化分解し、簡易的な排水処理で排水基準内となり下水道へ排出できます。</p>
+      </div>
+    </details>
+
+    <details class="legal">
+      <summary>PCBやPFASのような難分解性物質も、本当に処理できるのですか？</summary>
+      <div class="in">
+        <p>分解試験の実績があります。橋梁の剥離塗装屑（PCB 15mg/kg含有）をERCMで処理した結果、<b>処理後は検出限界の0.0005mg/kg未満まで減少し、炉外への排出も検出されませんでした</b>。この結果をもとに、PCB含有旧塗膜を低コストで処理する鋼構造物の保全工法として特許出願されています（特開2018-159172）。</p>
+        <p>処理対象には、塩素化合物・ダイオキシン・DDT・フッ素化合物（PTFE・PFOA・PFOS）等の難分解性有機化合物も含まれます。ただし、これらは案件ごとの性状が大きく異なるため、実投入前の個別試験と、所管自治体との事前協議を必須としてご案内しています。</p>
+      </div>
+    </details>
+
+    <details class="legal">
+      <summary>入れてはいけないものはありますか？</summary>
+      <div class="in">
+        <p>金属・ガラス・がれき等の<b>不燃物は対象外</b>です。ペットボトル大程度までであれば固形残渣中から回収できますが、目立つ大きさの不燃物は投入前に除去してください。除去することでERCM本来の性能が発揮されます。</p>
+        <p>また、<b>液体や粉体はそのままでは投入できません</b>。袋に詰める等の対応が必要です。</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ============ CLOSE ============ -->
+<section class="tinted" style="background:var(--paper-2)">
+  <div class="narrow" style="text-align:center">
+    <h2>まず、御社の廃棄物が処理できるかどうかから。</h2>
+    <p class="lede" style="margin-bottom:28px">4問・約60秒。判定と推奨機種サイズがその場で出ます。</p>
+    <a href="#shindan" class="btn">適合診断を受ける</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <b>ERCM 販売パートナー</b>
+    <p style="margin:0 0 18px">製造元：株式会社ASK商会（〒252-0311 神奈川県相模原市南区東林間7-13-44-101）／<a href="https://www.ask-shokai.com/" target="_blank" rel="noopener">www.ask-shokai.com</a></p>
+    <div class="fine">
+      <p style="margin:0 0 6px"><b style="display:inline;font-size:13px">出典・注記</b></p>
+      <ol>
+        <li>本ページの数値・仕様は、株式会社ASK商会 技術資料「ERCM 内熱型熱分解施設」（2025年7月）および株式会社エコクリエイトホールディングス「ERCM/OHD リサイクル装置の提案」（Rev.0）に基づきます。</li>
+        <li>コスト削減額（月400万円→月10万円）は名古屋市の弁当製造企業における一例であり、投入物・処理量・現行の委託条件により効果は異なります。CO₂排出量の比率（1.7%／21%）は代理店資料記載の値です。</li>
+        <li>減容率・物質収支・排出物の組成は投入物によって異なります。記載の実測値は特定条件下での測定結果であり、性能を保証するものではありません。</li>
+        <li>排ガス測定値は鹿嶋市衛生センター（平成24年5月、計量証明：株式会社日本シーシーエル、酸素濃度12%換算）によります。</li>
+        <li>環境省 平成24年度除染技術実証事業 選定技術。福島県広野町での実証内容は2013年11月27日 NHK「ニュースおはよう日本」で報道されたものを要約しています。</li>
+        <li>廃棄物処理法上の施設区分・必要な許認可の判断は、設置場所の所管自治体との協議によります。本ページの記載は行政判断を示すものではありません。</li>
+      </ol>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="in">
+    <p>御社の廃棄物が処理できるか、60秒で判定できます</p>
+    <a href="#shindan" class="btn">適合診断を受ける</a>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   設定：フォーム送信先
+   Formspree / Googleフォーム / 自社CGI 等のPOST先URLを入れる。
+   空のままなら mailto: にフォールバックする（メーラーが開く）。
+   ========================================================= */
+var FORM_ENDPOINT = "";
+var FALLBACK_MAIL = "s.terakura@soter-info.com";
+
+/* ---------- 質問定義 ---------- */
+var Q1 = [
+  {v:"food",  t:"食品残渣・生ごみ",        s:"野菜くず、加工残渣、内臓、貝殻"},
+  {v:"sludge",t:"下水汚泥・脱水ケーキ",    s:"し尿・汚泥、排水処理汚泥、焼却灰"},
+  {v:"plas",  t:"廃プラスチック",          s:"PP、PE、ビニル、発泡スチロール、容器包装"},
+  {v:"wood",  t:"木くず・剪定枝",          s:"解体木くず等"},
+  {v:"dung",  t:"糞尿・畜産廃棄物・死骸",  s:"鶏糞・牛糞・豚糞、駆除害獣等"},
+  {v:"med",   t:"感染性医療廃棄物",        s:"注射針・おむつ等"},
+  {v:"asr",   t:"ASR・廃タイヤ・被覆電線", s:"シュレッダーダスト等"},
+  {v:"frp",   t:"FRP・太陽光パネル・電子機器", s:"ガラス繊維・金属は残渣から回収"},
+  {v:"haz",   t:"難分解性物質を含むもの",  s:"PCB含有塗膜・PFAS・DDT等"},
+  {v:"inorg", t:"金属・ガラス・がれき等",  s:"不燃物が主体のもの"}
+];
+var Q2 = [
+  {v:"xs",t:"〜0.5 ㎥/日",   s:"小規模事業所・試験導入の規模"},
+  {v:"s", t:"0.5〜5 ㎥/日",  s:"中小工場・店舗の規模"},
+  {v:"m", t:"5〜20 ㎥/日",   s:"食品工場・中規模事業所の規模"},
+  {v:"l", t:"20〜100 ㎥/日", s:"大規模工場・処理業者の規模"},
+  {v:"xl",t:"100 ㎥/日 超",  s:"自治体・広域処理の規模"},
+  {v:"na",t:"わからない",    s:"重量しか把握していない場合もこちら"}
+];
+var Q3 = [
+  {v:"hi", t:"水分が多い",     s:"含水率60%以上／脱水ケーキ・生ごみなど"},
+  {v:"mid",t:"普通",           s:"一般的な混合廃棄物"},
+  {v:"lo", t:"乾いている",     s:"廃プラ・木くず主体"},
+  {v:"na", t:"わからない",     s:"混在していて一定しない"}
+];
+var Q4 = [
+  {v:"out", t:"外部委託（産廃処理）", s:"収集運搬＋処分費を支払っている"},
+  {v:"own", t:"自社焼却炉で処理",     s:"更新時期・燃料費が課題"},
+  {v:"rec", t:"堆肥化・リサイクル",   s:"引き取り先や品質が課題"},
+  {v:"none",t:"未処理・保管している", s:"処理先が見つかっていない"}
+];
+
+var A = {q1:[], q2:null, q3:null, q4:null};
+
+function render(id, list, multi, key, nextBtn){
+  var box = document.getElementById(id);
+  list.forEach(function(o){
+    var lab = document.createElement("label");
+    lab.className = "opt";
+    lab.innerHTML = '<input type="'+(multi?"checkbox":"radio")+'" name="'+id+'" value="'+o.v+'"><span><b style="font-weight:700">'+o.t+'</b><small>'+o.s+'</small></span>';
+    box.appendChild(lab);
+    lab.querySelector("input").addEventListener("change", function(){
+      if(multi){
+        A[key] = Array.prototype.slice.call(box.querySelectorAll("input:checked")).map(function(i){return i.value});
+      }else{
+        A[key] = this.value;
+        Array.prototype.forEach.call(box.querySelectorAll(".opt"), function(e){e.classList.remove("sel")});
+      }
+      lab.classList.toggle("sel", this.checked);
+      var ok = multi ? A[key].length>0 : !!A[key];
+      document.getElementById(nextBtn).disabled = !ok;
+    });
+  });
+}
+render("q1",Q1,true, "q1","n1");
+render("q2",Q2,false,"q2","n2");
+render("q3",Q3,false,"q3","n3");
+render("q4",Q4,false,"q4","n4");
+
+function go(n){
+  Array.prototype.forEach.call(document.querySelectorAll(".step"), function(s){
+    s.classList.toggle("on", +s.dataset.step === n);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll("#prog i"), function(b,i){
+    b.classList.toggle("on", i <= Math.min(n,3));
+  });
+  var box = document.getElementById("shindan");
+  var y = box.getBoundingClientRect().top + window.pageYOffset - 70;
+  if(window.pageYOffset > y || n>0) window.scrollTo({top:y, behavior:"smooth"});
+}
+document.getElementById("n1").onclick = function(){go(1)};
+document.getElementById("n2").onclick = function(){go(2)};
+document.getElementById("n3").onclick = function(){go(3)};
+document.getElementById("n4").onclick = function(){result(); go(4)};
+Array.prototype.forEach.call(document.querySelectorAll(".back"), function(b){
+  b.onclick = function(){go(+b.dataset.back)};
+});
+
+/* ---------- 判定 ---------- */
+var SIZE = {
+  xs:{name:"0.5〜1型（〜1㎥/日）",  ref:"設置面積 約46㎡（OHDなら約31㎡）・消費電力20kWh/日。相模原市の実証と同規模"},
+  s: {name:"5型（5㎥/日）",         ref:"処理能力1.0〜1.5トン/日・設置面積 約135㎡（OHDなら約90㎡）"},
+  m: {name:"10〜20型（10〜20㎥/日）", ref:"名古屋の弁当製造企業が10型で月390万円削減・6年半故障なし。鹿嶋市15㎥/日と同クラス"},
+  l: {name:"20〜50型（20〜50㎥/日）", ref:"50型は処理能力10〜15トン/日・投入口3か所。複数基構成も可"},
+  xl:{name:"100型（100㎥/日）〜複数基", ref:"ブラジルsolvi様・中国大連と同規模帯。100型が製造最大規模"},
+  na:{name:"要ヒアリング",          ref:"重量と比重、または保管容器の数から一緒に算出します"}
+};
+var LABEL1={}, LABEL2={}, LABEL3={}, LABEL4={};
+Q1.forEach(function(o){LABEL1[o.v]=o.t}); Q2.forEach(function(o){LABEL2[o.v]=o.t});
+Q3.forEach(function(o){LABEL3[o.v]=o.t}); Q4.forEach(function(o){LABEL4[o.v]=o.t});
+
+function result(){
+  var m = A.q1, organics = m.filter(function(v){return v!=="inorg"});
+  var v = document.getElementById("verdict");
+  var notes = [], cls, mark, title, sub;
+
+  if(organics.length === 0){
+    cls="ng"; mark="×"; title="ERCMの対象外です";
+    sub="ERCMは有機物（C・H・O）を熱分解する装置で、金属・ガラス・がれき等の不燃物は減容できません。";
+    notes.push("有機物が一定量混ざっている場合は、その部分のみを対象に再度診断してください。");
+  } else if(m.indexOf("inorg") >= 0){
+    cls="warn"; mark="△"; title="適合します（不燃物の事前除去が必要）";
+    sub="選択された有機物は処理可能です。ただし不燃物が混在しているため、投入前の除去工程を設計します。";
+  } else {
+    cls="ok"; mark="○"; title="適合します";
+    sub="選択された廃棄物は、いずれもERCMへの投入実績がある有機物です。";
+  }
+
+  v.className = "";
+  v.innerHTML = '<div class="verdict '+cls+'"><div class="mark">'+mark+'</div><div><b>'+title+'</b><span>'+sub+'</span></div></div>';
+
+  /* 減容の目安 */
+  var vol = {xs:"0.5",s:"5",m:"20",l:"100",xl:"100超",na:"—"}[A.q2];
+  var resid;
+  if(A.q2==="na" || A.q2==="xl"){ resid = "投入量の1%以下"; }
+  else { resid = "約 " + (Math.round(parseFloat(vol)*0.01*1000)/1000) + " ㎥/日 以下"; }
+
+  if(cls==="ng"){
+    document.getElementById("rgrid").innerHTML =
+      '<div><small>判定</small><b>対象外</b><em>不燃物（金属・ガラス・がれき等）のみのため</em></div>'+
+      '<div><small>推奨機種サイズ</small><b style="font-size:17px">—</b><em>有機物が混在する場合は再診断してください</em></div>'+
+      '<div><small>残渣の目安</small><b>—</b><em>不燃物は減容されません</em></div>';
+  }else{
+    document.getElementById("rgrid").innerHTML =
+      '<div><small>判定</small><b>投入可能</b><em>'+organics.map(function(x){return LABEL1[x]}).join("／")+(cls==="warn"?"（＋不燃物あり）":"")+'</em></div>'+
+      '<div><small>推奨機種サイズ</small><b style="font-size:17px">'+SIZE[A.q2].name+'</b><em>'+SIZE[A.q2].ref+'</em></div>'+
+      '<div><small>残渣の目安</small><b>'+resid+'</b><em>減容率1/100で保守的に試算。実測は1/128〜1/1300（投入物・含水率による）</em></div>';
+  }
+
+  /* 個別の注意点 */
+  if(A.q3==="hi") notes.push("<b>高含水物はERCMの得意分野です。</b>予備乾燥・補助燃料なしで、含水率60〜70%程度の脱水汚泥ケーキも熱分解できます。乾燥設備の燃料費が丸ごと不要になります。");
+  if(A.q3==="lo") notes.push("乾いた廃プラ・木くずが主体の場合、油溶性成分（燃焼油）の回収量が多くなる傾向があります。回収油の自社利用または売却の可否を含めて試算します。");
+  if(A.q3==="na") notes.push("含水率が一定しない混合物でも投入できます。おおよその比率がわかると機種選定の精度が上がります。");
+
+  if(m.indexOf("med")>=0) notes.push("<b>感染性医療廃棄物は、注射針・おむつ等も分別なしに直接投入が可能です</b>（滅菌・殺菌効果）。ただし感染性廃棄物の処理は許認可の要件が個別に厳しいため、所管自治体との事前協議を必ず並行してください。");
+  if(m.indexOf("plas")>=0) notes.push("<b>廃プラが多い場合は、油化装置OHDの検討をお勧めします。</b>石油由来の製品は重量比80%を原油として回収でき、設置面積はERCMの1/3以下、トラックでの移動も可能です。ERCMでも燃焼油としてのサーマルリサイクル・分溜精製によるケミカルリサイクルが可能です。");
+  if(m.indexOf("frp")>=0) notes.push("FRPは樹脂分のみ分解され、グラスファイバーがリサイクル可能な状態で残ります。太陽光パネル・電子機器も樹脂分の分解後、金属・希少金属の回収が容易になります。");
+  if(m.indexOf("haz")>=0) notes.push("<b>PCB含有塗装屑の分解試験では、15mg/kg → 検出限界（0.0005mg/kg）未満まで分解された実績があります</b>（特開2018-159172）。PTFE・PFOA・PFOS等のフッ素化合物も処理対象ですが、難分解性物質は個別の事前試験と自治体協議を必須としてご案内しています。");
+  if(m.indexOf("wood")>=0) notes.push("木質が主体の場合、防虫・防腐用途で流通している木酢液が回収できます。成分分析では有害成分は検出されていません。");
+  if(m.indexOf("dung")>=0) notes.push("糞尿は高含水かつ臭気が課題になりますが、いずれも投入実績があります。臭気を吸収した処理水は次亜塩素酸水で酸化分解し、簡易的な排水処理で下水道へ排出できます。");
+  if(m.indexOf("asr")>=0) notes.push("ASR・廃タイヤ・被覆電線も投入可能です。ワイヤー等の金属部分は残渣中に残るため、回収して有価物として扱えます。");
+  if(m.indexOf("sludge")>=0) notes.push("脱水ケーキは、通常の焼却炉ではそのまま焼却できない含水率でも直接投入できます。現在の汚泥処分費との比較が最も差が出やすい部分です。");
+
+  if(A.q4==="out") notes.push("外部委託中の場合、比較対象は「収集運搬費＋処分費 × 年間量」です。<b>名古屋の弁当製造企業（10型）では月400万円の処理費が月10万円になりました。</b>直近1年の産廃管理票（マニフェスト）集計があれば、削減幅の試算精度が大きく上がります。");
+  if(A.q4==="own") notes.push("自社焼却炉をお持ちの場合、燃料費・薬剤費・毎年の補修工事費・熟練運転員の人件費が比較対象になります。ERCMは運転時の燃料・薬剤が不要で、夜間無人運転も可能です。");
+  if(A.q4==="rec") notes.push("堆肥化・リサイクル中の場合、引き取り先の変動リスクと品質管理の手間が比較対象になります。ERCMは最終処分ゼロで、セラミック粉末はメーカーが全量買取します。");
+  if(A.q4==="none") notes.push("保管中の廃棄物がある場合、保管スペースの削減効果が最も大きく出ます。可動式トレーラー型の実績もあり、現地での処理も検討できます。");
+
+  if(A.q2==="xl") notes.push("100㎥/日を超える規模は複数基構成になります。ブラジル・中国での100㎥/日プラントの稼働実績をもとに構成をご提案します。");
+  if(A.q2==="na") notes.push("発生量が体積で把握できていない場合は、重量または保管容器の数からこちらで換算します。");
+
+  notes.push("液体・粉体はそのままでは投入できません（袋詰め等の対応が必要です）。");
+  notes.push("<b>設置には所管自治体との協議が必要です。</b>ERCMは熱分解施設として設計されていますが、施設区分・許認可の判断は行政によります。検討初期からの協議の進め方もあわせてご支援します。");
+
+  document.getElementById("notes").innerHTML =
+    '<h4>この条件での確認事項</h4><ul><li>' + notes.join("</li><li>") + "</li></ul>";
+}
+
+/* ---------- 送信 ---------- */
+function summary(){
+  return [
+    "【ERCM適合診断の結果】",
+    "投入物：" + A.q1.map(function(x){return LABEL1[x]}).join("、"),
+    "発生量：" + LABEL2[A.q2],
+    "含水率：" + LABEL3[A.q3],
+    "現在の処理：" + LABEL4[A.q4],
+    "推奨機種サイズ：" + SIZE[A.q2].name
+  ].join("\n");
+}
+document.getElementById("lead").addEventListener("submit", function(e){
+  e.preventDefault();
+  var f = e.target;
+  var body = summary() + "\n\n【お客様情報】\n会社名：" + f.company.value + "\nご担当者：" + f.name.value +
+             "\nメール：" + f.email.value + "\n電話：" + (f.tel.value || "—") +
+             "\nご質問：" + (f.message.value || "—");
+
+  function done(){
+    f.style.display = "none";
+    var s = document.getElementById("sent");
+    s.style.display = "block";
+    s.innerHTML = '<div class="verdict ok"><div class="mark">✓</div><div><b>送信しました</b><span>2営業日以内に、診断結果に基づいた個別試算をお送りします。</span></div></div>';
+  }
+
+  if(FORM_ENDPOINT){
+    var fd = new FormData(f);
+    fd.append("diagnosis", summary());
+    fetch(FORM_ENDPOINT, {method:"POST", body:fd, headers:{Accept:"application/json"}})
+      .then(done)
+      .catch(function(){ alert("送信に失敗しました。お手数ですが " + FALLBACK_MAIL + " まで直接ご連絡ください。"); });
+  }else{
+    location.href = "mailto:" + FALLBACK_MAIL +
+      "?subject=" + encodeURIComponent("【ERCM】適合診断からのお問い合わせ（" + f.company.value + "）") +
+      "&body=" + encodeURIComponent(body);
+    done();
+  }
+});
+
+/* ---------- sticky CTA ---------- */
+var st = document.getElementById("sticky"), sh = document.getElementById("shindan");
+window.addEventListener("scroll", function(){
+  var past = window.pageYOffset > 620;
+  var inside = sh.getBoundingClientRect().top < window.innerHeight && sh.getBoundingClientRect().bottom > 0;
+  st.style.display = (past && !inside) ? "block" : "none";
+}, {passive:true});
+</script>
+</body>
+</html>
