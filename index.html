@@ -13,10 +13,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="canonical" href="https://ercm.soter-info.com/">
 <meta name="robots" content="index,follow">
-<!-- GA4: 測定IDが決まったら G-XXXXXXXXXX を差し替えて下のコメントを外す
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
--->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6RLYD1SX79"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-6RLYD1SX79');</script>
 <style>
 :root{
   --ink:#12151a; --ink-2:#3d4552; --ink-3:#6b7480;
@@ -695,10 +693,11 @@ function go(n){
   var y = box.getBoundingClientRect().top + window.pageYOffset - 70;
   if(window.pageYOffset > y || n>0) window.scrollTo({top:y, behavior:"smooth"});
 }
-document.getElementById("n1").onclick = function(){go(1)};
+function track(name, params){ if(typeof gtag==="function") gtag("event", name, params||{}); }
+document.getElementById("n1").onclick = function(){track("shindan_start",{materials:A.q1.join(",")}); go(1)};
 document.getElementById("n2").onclick = function(){go(2)};
 document.getElementById("n3").onclick = function(){go(3)};
-document.getElementById("n4").onclick = function(){result(); go(4)};
+document.getElementById("n4").onclick = function(){result(); track("shindan_complete",{materials:A.q1.join(","),volume:A.q2,current:A.q4}); go(4)};
 Array.prototype.forEach.call(document.querySelectorAll(".back"), function(b){
   b.onclick = function(){go(+b.dataset.back)};
 });
@@ -802,6 +801,7 @@ document.getElementById("lead").addEventListener("submit", function(e){
              "\nご質問：" + (f.message.value || "—");
 
   function done(){
+    track("generate_lead",{volume:A.q2});
     f.style.display = "none";
     var s = document.getElementById("sent");
     s.style.display = "block";
