@@ -515,7 +515,7 @@ footer a{color:#c3cad4}
         <div class="form">
           <h3 style="margin-bottom:4px">この診断結果をもとに、個別の試算をお送りします</h3>
           <p class="qsub" style="margin-bottom:20px">処理量・投入物に応じた機種構成、設置スペース、概算費用、現状の委託費との比較をご案内します。しつこい営業はいたしません。</p>
-          <form id="lead">
+          <form id="lead" method="post" action="mailto:s.terakura@soter-info.com" enctype="text/plain">
             <div class="fgrid">
               <div><label class="f" for="f_co">会社名<i>必須</i></label><input type="text" id="f_co" name="company" required autocomplete="organization"></div>
               <div><label class="f" for="f_na">ご担当者名<i>必須</i></label><input type="text" id="f_na" name="name" required autocomplete="name"></div>
@@ -629,6 +629,16 @@ footer a{color:#c3cad4}
    ========================================================= */
 var FORM_ENDPOINT = "";
 var FALLBACK_MAIL = "s.terakura@soter-info.com";
+
+if(!FORM_ENDPOINT){
+  var leadForm = document.getElementById("lead");
+  var leadSubmit = leadForm.querySelector('button[type="submit"]');
+  var leadNote = document.createElement("p");
+  leadSubmit.textContent = "メールで個別試算を依頼する";
+  leadNote.className = "qsub";
+  leadNote.textContent = "送信するとメールアプリが開きます。開かない場合は " + FALLBACK_MAIL + " へ直接ご連絡ください。";
+  leadForm.insertBefore(leadNote, leadForm.querySelector(".navrow"));
+}
 
 /* ---------- 質問定義 ---------- */
 var Q1 = [
@@ -821,6 +831,10 @@ document.getElementById("lead").addEventListener("submit", function(e){
     var fd = new FormData(f);
     fd.append("diagnosis", summary());
     fetch(FORM_ENDPOINT, {method:"POST", body:fd, headers:{Accept:"application/json"}})
+      .then(function(response){
+        if(!response.ok) throw new Error("送信先エラー: " + response.status);
+        return response;
+      })
       .then(done)
       .catch(function(){ alert("送信に失敗しました。お手数ですが " + FALLBACK_MAIL + " まで直接ご連絡ください。"); });
   }else{
